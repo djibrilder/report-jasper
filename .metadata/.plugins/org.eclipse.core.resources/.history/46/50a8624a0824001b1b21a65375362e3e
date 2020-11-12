@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.13.0.final using JasperReports Library version 6.13.0-46ada4d1be8f3c5985fd0b6146f3ed44caed6f05  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="listecredit" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d87fb74c-1b0d-42c5-a901-fc651eee000b">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="connexion nanocredit"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT 
+	cr.numero_credit,
+	cr.status_credit,
+	 cr.date_expire_credit,
+	 cr.amount_net,
+	 cr.amount_payement,
+	 cli.first_name,
+	 cli.last_name,
+	 cli.phone,
+	 cli.numero as numcli
+FROM credits cr
+INNER JOIN clients cli
+	on cr.client_id = cli.id]]>
+	</queryString>
+	<field name="numero_credit" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="numero_credit"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="credits"/>
+	</field>
+	<field name="status_credit" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="status_credit"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="credits"/>
+	</field>
+	<field name="date_expire_credit" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="date_expire_credit"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="credits"/>
+	</field>
+	<field name="amount_net" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="amount_net"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="credits"/>
+	</field>
+	<field name="amount_payement" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="amount_payement"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="credits"/>
+	</field>
+	<field name="first_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="first_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="clients"/>
+	</field>
+	<field name="last_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="last_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="clients"/>
+	</field>
+	<field name="phone" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="phone"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="clients"/>
+	</field>
+	<field name="numcli" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="numcli"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="clients"/>
+	</field>
+	<group name="numero_credit">
+		<groupExpression><![CDATA[$F{numero_credit}]]></groupExpression>
+	</group>
+	<group name="status_credit">
+		<groupExpression><![CDATA[$F{status_credit}]]></groupExpression>
+	</group>
+	<group name="date_expire_credit">
+		<groupExpression><![CDATA[$F{date_expire_credit}]]></groupExpression>
+	</group>
+	<group name="amount_net">
+		<groupExpression><![CDATA[$F{amount_net}]]></groupExpression>
+	</group>
+	<group name="amount_payement">
+		<groupExpression><![CDATA[$F{amount_payement}]]></groupExpression>
+	</group>
+	<group name="first_name">
+		<groupExpression><![CDATA[$F{first_name}]]></groupExpression>
+	</group>
+	<group name="last_name">
+		<groupExpression><![CDATA[$F{last_name}]]></groupExpression>
+	</group>
+	<group name="phone">
+		<groupExpression><![CDATA[$F{phone}]]></groupExpression>
+	</group>
+	<group name="numcli">
+		<groupExpression><![CDATA[$F{numcli}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="73" splitType="Stretch">
+			<rectangle>
+				<reportElement x="-10" y="11" width="802" height="29" backcolor="#D9D9D9" uuid="6e4ed782-056e-45a1-b2d1-4d43bfcaba54"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="270" y="10" width="390" height="30" uuid="b893a535-3d49-420b-a7ac-0458c1c16e5c"/>
+				<text><![CDATA[TLISTE DES ]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+</jasperReport>

@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.13.0.final using JasperReports Library version 6.13.0-46ada4d1be8f3c5985fd0b6146f3ed44caed6f05  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="lettreEngagement" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d4ff7454-67bc-4aaf-8f5c-26df3c5e093e">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Sample DB"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT *FROM ORDERS]]>
+	</queryString>
+	<field name="ORDERID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="ORDERID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ORDERS"/>
+	</field>
+	<field name="CUSTOMERID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="CUSTOMERID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ORDERS"/>
+	</field>
+	<field name="EMPLOYEEID" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="EMPLOYEEID"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ORDERS"/>
+	</field>
+	<field name="ORDERDATE" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="ORDERDATE"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ORDERS"/>
+	</field>
+	<field name="REQUIREDDATE" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="REQUIREDDATE"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ORDERS"/>
+	</field>
+	<field name="SHIPPEDDATE" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="SHIPPEDDATE"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ORDERS"/>
+	</field>
+	<field name="SHIPVIA" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="SHIPVIA"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ORDERS"/>
+	</field>
+	<field name="FREIGHT" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="FREIGHT"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ORDERS"/>
+	</field>
+	<field name="SHIPNAME" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="SHIPNAME"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ORDERS"/>
+	</field>
+	<field name="SHIPADDRESS" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="SHIPADDRESS"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ORDERS"/>
+	</field>
+	<field name="SHIPCITY" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="SHIPCITY"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ORDERS"/>
+	</field>
+	<field name="SHIPREGION" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="SHIPREGION"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ORDERS"/>
+	</field>
+	<field name="SHIPPOSTALCODE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="SHIPPOSTALCODE"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ORDERS"/>
+	</field>
+	<field name="SHIPCOUNTRY" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="SHIPCOUNTRY"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ORDERS"/>
+	</field>
+	<group name="TITLE">
+		<groupHeader>
+			<band height="52">
+				<rectangle>
+					<reportElement x="0" y="0" width="560" height="41" uuid="11bb96c6-e2a8-4976-8404-0f2d2d45781c"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="0" y="11" width="550" height="30" uuid="aa08e6f3-cf4d-417d-b3f7-5e703443653b"/>
+					<textElement textAlignment="Center">
+						<font fontName="Serif" size="16" isBold="true"/>
+					</textElement>
+					<text><![CDATA[LETTRE D'ENGAGEMENT]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="75" splitType="Stretch">
+			<image>
+				<reportElement x="258" y="21" width="281" height="50" uuid="10c74cc3-83a7-4f2b-a909-ed182decf18f"/>
+				<imageExpression><![CDATA["/image/thumbnail_image.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="281" y="0" width="100" height="30" uuid="3d9b6b7f-9e99-44f1-876e-ab3f1044ddef">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0cf4ca0a-108a-4d02-9e7b-841d9846ac16"/>
+				</reportElement>
+				<text><![CDATA[SHIPNAME]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="531" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="59b9c757-ccd5-4bc5-b669-7745cca64d9d"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Je sousigné(e),]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="20" width="78" height="15" uuid="8566c594-51c8-40e7-b476-d0691843c7f6"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[M/Mlle/Mme]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="39" width="81" height="14" uuid="fa55b2ef-534f-4977-8d14-ac3c3b416d95"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Profession]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="82" y="39" width="159" height="16" uuid="e2238ab6-7bed-487e-bfa2-8592c3b8a000">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5bc88940-e5f1-4f18-b030-7f3cfa3fb4f7"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SHIPVIA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="3" y="56" width="69" height="18" uuid="a2ad390d-ec57-4c6f-8639-4efdd67f81e5"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[N° CNI]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="83" y="56" width="119" height="18" uuid="669b5c16-f155-4789-87d4-583384b85437">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="dc165ccd-1634-4d7a-967b-319ef2b80489"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{EMPLOYEEID}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="3" y="82" width="123" height="15" uuid="72a76b34-2dca-4390-a169-8f4851bb6e05"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Délivrée le ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="85" width="193" height="16" uuid="42742650-f0ea-46cb-8954-fcd72eabfd75">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="24894da9-d9bc-47ee-8945-4c521f3a3ff0"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ORDERDATE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="107" width="178" height="17" uuid="908d7c64-4d86-44e1-9577-f76ea24c1dbd"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Demeurant et domicilié(e) à ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="189" y="105" width="364" height="20" uuid="97bdcf93-1d3e-4e06-b9d1-331efb89b21c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="06e4e62c-4f39-4254-bcce-f7956a927a98"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SHIPADDRESS}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="126" width="554" height="22" uuid="d0e0d534-5202-451f-822f-2467da92fff5"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Bénéficaire de la Délégation à l'Entreprenariat Rapide des Femmes et des jeunes.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="144" width="562" height="34" uuid="db384b1f-1e69-4665-8194-f06f3345d9f3"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Dans le cadre de son offre Nano Crédit, reconnais avoir reçu de la DER/FJ la somme de ]]></text>
+			</staticText>
+			<textField pattern="XOF #,##0.###;(#,##0.###)">
+				<reportElement x="6" y="173" width="124" height="20" uuid="d45eabe7-417e-4b37-8bc7-e5561a599b25">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="97967c16-8123-4e97-a334-159d766fb62b"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ORDERID}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="146" y="172" width="321" height="21" uuid="5158eef3-e10f-4be6-8ea3-1ac1aa283ebf"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[à titre de financement de mon activité.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="202" width="555" height="16" uuid="729335ae-1aa2-4aaf-a0d4-bc01a3c7a486"/>
+				<textElement verticalAlignment="Top">
+					<font size="11"/>
+					<paragraph lineSpacing="1_1_2"/>
+				</textElement>
+				<text><![CDATA[Je m'engage expressément à rembourser la DER/FJ cette somme majorée d'une commission de]]></text>
+			</staticText>
+			<textField pattern="XOF #,##0.###;#,##0.##">
+				<reportElement x="96" y="221" width="121" height="19" uuid="98fdce3f-89c5-4385-9efa-79b92e1de209">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0a91e9f5-fc58-49fb-a520-39f6920df54e"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ORDERID}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="211" y="224" width="130" height="19" uuid="35d767ad-3272-4a11-91ec-cae0db6f0919"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[, au plus tard le ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="82" y="22" width="120" height="17" uuid="36153193-5c48-4904-836f-724ebce85170">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3da92c2e-850b-446a-b568-2ea0637e17ee"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SHIPNAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="3" y="223" width="85" height="17" uuid="8d233956-d7b7-4523-8238-f8636c27ac17">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="319c7a53-1e44-4346-8401-ff45c632a4c7"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SHIPVIA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="88" y="220" width="19" height="22" uuid="9d1a63bb-f886-4741-bc19-3ff574958a36"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[soit]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="350" y="224" width="170" height="17" uuid="4d1c4850-97d7-4702-97fa-ea62488f2b3b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bfbe8da7-cf28-433f-9bbf-4f92833405e6"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Serif" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SHIPPEDDATE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="266" width="548" height="40" uuid="be593ca4-c278-45f7-8baa-0c6212746315"/>
+				<textElement markup="none">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Le présent engagement est délivré à la DER/FJ pour vouloir et servir ce que de droit, la DER/FJ se reservant le doirt de mener toutes les actions nécessaires pour le recouvrement de sa créance.]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

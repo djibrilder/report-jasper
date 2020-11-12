@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.13.0.final using JasperReports Library version 6.13.0-46ada4d1be8f3c5985fd0b6146f3ed44caed6f05  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="recudepot" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f7866662-eebd-44d5-b9c7-b2b9dd008ffd">
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<group name="logo">
+		<groupHeader>
+			<band height="55"/>
+		</groupHeader>
+		<groupFooter>
+			<band height="50"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="38" splitType="Stretch">
+			<image>
+				<reportElement x="332" y="-2" width="222" height="36" uuid="346c6f75-3937-4436-9639-e27d264d316f"/>
+				<imageExpression><![CDATA["/image/thumbnail_image.png"]]></imageExpression>
+			</image>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="-57" width="560" height="44" uuid="eda87572-0924-4e86-9409-b1244cbfc801"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="-49" width="560" height="30" uuid="39fbc808-04d6-428d-888f-405c76cd3641"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="23" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reçu dépôt - DER F/J]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="160" height="20" uuid="311c3615-1875-469a-b8b7-55a4c2245007"/>
+				<text><![CDATA[Date d'operation :]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

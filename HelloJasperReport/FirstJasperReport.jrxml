@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.13.0.final using JasperReports Library version 6.13.0-46ada4d1be8f3c5985fd0b6146f3ed44caed6f05  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="FirstJasperReport" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9c2e3fc3-2e30-47fb-ad49-96aeba331b4e">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="LearningSL"/>
+	<queryString language="SQL">
+		<![CDATA[Select Acc.Open_Branch_Id
+      ,Bra.Name           Branch_Name
+      ,Acc.Cust_Id
+      ,Cus.Address        Cust_Address
+      ,Acc.Account_Id
+      ,Acc.Product_Cd
+      ,Acc.Avail_Balance
+From   account  Acc
+      ,customer Cus
+      ,branch   Bra
+Where  Acc.Cust_Id = Cus.Cust_Id
+And    Acc.Open_Branch_Id = Bra.Branch_Id]]>
+	</queryString>
+	<field name="Open_Branch_Id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="Open_Branch_Id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="account"/>
+	</field>
+	<field name="Branch_Name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="Branch_Name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="branch"/>
+	</field>
+	<field name="Cust_Id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="Cust_Id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="account"/>
+	</field>
+	<field name="Cust_Address" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="Cust_Address"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="customer"/>
+	</field>
+	<field name="Account_Id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="Account_Id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="account"/>
+	</field>
+	<field name="Product_Cd" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="Product_Cd"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="account"/>
+	</field>
+	<field name="Avail_Balance" class="java.lang.Float">
+		<property name="com.jaspersoft.studio.field.label" value="Avail_Balance"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="account"/>
+	</field>
+	<variable name="Avail_Balance1" class="java.lang.Float" resetType="Group" resetGroup="Customer" calculation="Sum">
+		<variableExpression><![CDATA[$F{Avail_Balance}]]></variableExpression>
+	</variable>
+	<variable name="Avail_Balance2" class="java.lang.Float" resetType="Group" resetGroup="Branch" calculation="Sum">
+		<variableExpression><![CDATA[$F{Avail_Balance}]]></variableExpression>
+	</variable>
+	<group name="Branch">
+		<groupExpression><![CDATA[$F{Open_Branch_Id}]]></groupExpression>
+		<groupHeader>
+			<band height="41">
+				<rectangle>
+					<reportElement x="1" y="0" width="799" height="40" backcolor="#A3A3A3" uuid="9bd5a03b-f19d-444a-8375-b0db4bfa6be7"/>
+				</rectangle>
+				<textField>
+					<reportElement x="0" y="5" width="90" height="30" uuid="ebb0404f-c69c-468c-a328-857e47677917"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{Open_Branch_Id}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="95" y="5" width="150" height="30" uuid="b5879a7d-12a0-4b4f-9c7d-0140cfe66f76"/>
+					<textFieldExpression><![CDATA[$F{Branch_Name}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="50">
+				<textField>
+					<reportElement x="700" y="10" width="100" height="30" backcolor="#498781" uuid="f438c845-2e29-4111-8af7-f8840f87d442"/>
+					<textFieldExpression><![CDATA[$V{Avail_Balance2}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<group name="Customer">
+		<groupExpression><![CDATA[$F{Cust_Id}]]></groupExpression>
+		<groupHeader>
+			<band height="34">
+				<rectangle>
+					<reportElement x="240" y="0" width="560" height="32" backcolor="#DBDBDB" uuid="edabaa8f-7ded-4792-897a-1e3382c02643"/>
+				</rectangle>
+				<textField>
+					<reportElement x="244" y="10" width="76" height="22" uuid="4d2d6207-9d8a-42f3-8a72-6ea5e1ac1b83"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{Cust_Id}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="320" y="10" width="160" height="22" uuid="f736a0f0-35da-4250-a4a6-b8a1bfd6037f"/>
+					<textFieldExpression><![CDATA[$F{Cust_Address}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="35">
+				<textField>
+					<reportElement x="693" y="6" width="104" height="25" backcolor="#B2BD8A" uuid="78da3343-16a8-4486-9ffa-4819329e90f7"/>
+					<textFieldExpression><![CDATA[$V{Avail_Balance1}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="93">
+			<image>
+				<reportElement x="10" y="0" width="80" height="70" uuid="2743de8e-0068-411a-899a-cc38d12dacd4"/>
+				<imageExpression><![CDATA["/images/614421.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="692" y="0" width="100" height="30" uuid="7173228b-7906-4c4d-859e-23b3d2b9c189"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Cantarell" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[GHODO BANK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="50" width="620" height="30" uuid="c73d7862-77e0-4cfc-83b2-f199bdd60810"/>
+				<textElement textAlignment="Center">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[BANK REPORT]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="57" splitType="Stretch">
+			<rectangle>
+				<reportElement x="1" y="0" width="799" height="50" backcolor="#4D7570" uuid="bb949dd5-8935-4d22-bf9a-6a1846e798fe"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="480" y="13" width="100" height="30" uuid="afb10e43-3db9-446d-847c-fef812b760b6">
+					<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+					<property name="com.jaspersoft.studio.data.defaultdataadapter" value="LearningSL"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[ACCOUNT ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="587" y="13" width="100" height="30" uuid="5032e7d1-d2ac-4968-a9da-a9ac63c17c4c">
+					<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+					<property name="com.jaspersoft.studio.data.defaultdataadapter" value="LearningSL"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[PRODUIT CD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="692" y="13" width="100" height="30" uuid="ff0bf3b4-af2a-4ae5-b276-a95ba1d9e282">
+					<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+					<property name="com.jaspersoft.studio.data.defaultdataadapter" value="LearningSL"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[AVAIL BALANCE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="13" width="100" height="30" uuid="98aab89d-4946-4ccf-ab67-c41be7ec0b5a">
+					<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+					<property name="com.jaspersoft.studio.data.defaultdataadapter" value="LearningSL"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[CUST ADDRESS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="244" y="13" width="100" height="30" uuid="a959944e-04d3-4ff9-b160-ab7bfedf5295">
+					<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+					<property name="com.jaspersoft.studio.data.defaultdataadapter" value="LearningSL"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[CUST ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="13" width="100" height="30" uuid="146fa0b9-6b32-4c99-a173-91fe4353c37a">
+					<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+					<property name="com.jaspersoft.studio.data.defaultdataadapter" value="LearningSL"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[BRANCHE NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="13" width="100" height="30" uuid="f4fef16b-a81f-4345-bf0c-5dbe3cb98ada">
+					<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+					<property name="com.jaspersoft.studio.data.defaultdataadapter" value="LearningSL"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[BRANCH ID]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="35" splitType="Stretch">
+			<textField>
+				<reportElement x="480" y="7" width="100" height="20" uuid="ee469fd4-7095-4a9c-82e0-55dcd8d42233">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bb7a6f4e-6c1e-41cc-b089-3ab4f78e8697"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Account_Id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="587" y="7" width="100" height="20" uuid="4b3d890a-fb20-4a6a-92a2-b31bffed9cb3">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="52f13a77-8930-4447-9061-8f6426c6bfda"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Product_Cd}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="699" y="7" width="100" height="20" uuid="b47517c2-e6bf-481a-957d-927e1a8831d6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f5346477-2d73-4a23-89ab-8dffbac221a2"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Avail_Balance}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="50">
+			<textField>
+				<reportElement x="0" y="10" width="100" height="30" uuid="7e19a870-e448-4e7a-8c95-431c91544024"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

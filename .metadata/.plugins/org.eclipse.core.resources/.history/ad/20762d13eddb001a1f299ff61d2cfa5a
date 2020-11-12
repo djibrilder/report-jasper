@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.13.0.final using JasperReports Library version 6.13.0-46ada4d1be8f3c5985fd0b6146f3ed44caed6f05  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="FirstJasperReport" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9068e13b-3f9b-4e36-9ba9-32d40e93bd94">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="LearningSL"/>
+	<queryString language="SQL">
+		<![CDATA[Select Acc.Open_Branch_Id
+      ,Bra.Name           Branch_Name
+      ,Acc.Cust_Id
+      ,Cus.Address        Cust_Address
+      ,Acc.Account_Id
+      ,Acc.Product_Cd
+      ,Acc.Avail_Balance
+From   account  Acc
+      ,customer Cus
+      ,branch   Bra
+Where  Acc.Cust_Id = Cus.Cust_Id
+And    Acc.Open_Branch_Id = Bra.Branch_Id]]>
+	</queryString>
+	<field name="Open_Branch_Id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="Open_Branch_Id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="account"/>
+	</field>
+	<field name="Branch_Name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="Branch_Name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="branch"/>
+	</field>
+	<field name="Cust_Id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="Cust_Id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="account"/>
+	</field>
+	<field name="Cust_Address" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="Cust_Address"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="customer"/>
+	</field>
+	<field name="Account_Id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="Account_Id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="account"/>
+	</field>
+	<field name="Product_Cd" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="Product_Cd"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="account"/>
+	</field>
+	<field name="Avail_Balance" class="java.lang.Float">
+		<property name="com.jaspersoft.studio.field.label" value="Avail_Balance"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="account"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

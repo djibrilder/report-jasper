@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.13.0.final using JasperReports Library version 6.13.0-46ada4d1be8f3c5985fd0b6146f3ed44caed6f05  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="listecredit" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d87fb74c-1b0d-42c5-a901-fc651eee000b">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="connexion nanocredit"/>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="listecredit" uuid="92f00bef-c567-4845-a870-b8e6525e5cda">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="connexion nanocredit"/>
+		<queryString language="SQL">
+			<![CDATA[SELECT 
+	 cr.numero_credit,
+	 cr.status_credit,
+	 cr.date_expire_credit,
+	 cr.amount_net,
+	 cr.amount_payement,
+	 cli.first_name,
+	 cli.last_name,
+	 cli.phone,
+	 cli.numero as numcli
+FROM credits cr
+INNER JOIN clients cli
+	on cr.client_id = cli.id]]>
+		</queryString>
+		<field name="numero_credit" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="numero_credit"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="credits"/>
+		</field>
+		<field name="status_credit" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="status_credit"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="credits"/>
+		</field>
+		<field name="date_expire_credit" class="java.sql.Timestamp">
+			<property name="com.jaspersoft.studio.field.label" value="date_expire_credit"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="credits"/>
+		</field>
+		<field name="amount_net" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.label" value="amount_net"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="credits"/>
+		</field>
+		<field name="amount_payement" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.label" value="amount_payement"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="credits"/>
+		</field>
+		<field name="first_name" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="first_name"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="clients"/>
+		</field>
+		<field name="last_name" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="last_name"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="clients"/>
+		</field>
+		<field name="phone" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="phone"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="clients"/>
+		</field>
+		<field name="numcli" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="numcli"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="clients"/>
+		</field>
+		<group name="numero_credit">
+			<groupExpression><![CDATA[$F{numero_credit}]]></groupExpression>
+		</group>
+		<group name="status_credit">
+			<groupExpression><![CDATA[$F{status_credit}]]></groupExpression>
+		</group>
+		<group name="date_expire_credit">
+			<groupExpression><![CDATA[$F{date_expire_credit}]]></groupExpression>
+		</group>
+		<group name="amount_net">
+			<groupExpression><![CDATA[$F{amount_net}]]></groupExpression>
+		</group>
+		<group name="amount_payement">
+			<groupExpression><![CDATA[$F{amount_payement}]]></groupExpression>
+		</group>
+		<group name="first_name">
+			<groupExpression><![CDATA[$F{first_name}]]></groupExpression>
+		</group>
+		<group name="last_name">
+			<groupExpression><![CDATA[$F{last_name}]]></groupExpression>
+		</group>
+		<group name="phone">
+			<groupExpression><![CDATA[$F{phone}]]></groupExpression>
+		</group>
+		<group name="numcli">
+			<groupExpression><![CDATA[$F{numcli}]]></groupExpression>
+		</group>
+	</subDataset>
+	<queryString language="SQL">
+		<![CDATA[SELECT 
+	cr.numero_credit,
+	cr.status_credit,
+	 cr.date_expire_credit,
+	 cr.amount_net,
+	 cr.amount_payement,
+	 cli.first_name,
+	 cli.last_name,
+	 cli.phone,
+	 cli.numero as numcli
+FROM credits cr
+INNER JOIN clients cli
+	on cr.client_id = cli.id]]>
+	</queryString>
+	<field name="numero_credit" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="numero_credit"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="credits"/>
+	</field>
+	<field name="status_credit" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="status_credit"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="credits"/>
+	</field>
+	<field name="date_expire_credit" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="date_expire_credit"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="credits"/>
+	</field>
+	<field name="amount_net" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="amount_net"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="credits"/>
+	</field>
+	<field name="amount_payement" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="amount_payement"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="credits"/>
+	</field>
+	<field name="first_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="first_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="clients"/>
+	</field>
+	<field name="last_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="last_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="clients"/>
+	</field>
+	<field name="phone" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="phone"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="clients"/>
+	</field>
+	<field name="numcli" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="numcli"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="clients"/>
+	</field>
+	<group name="numero_credit">
+		<groupExpression><![CDATA[$F{numero_credit}]]></groupExpression>
+	</group>
+	<group name="status_credit">
+		<groupExpression><![CDATA[$F{status_credit}]]></groupExpression>
+	</group>
+	<group name="date_expire_credit">
+		<groupExpression><![CDATA[$F{date_expire_credit}]]></groupExpression>
+	</group>
+	<group name="amount_net">
+		<groupExpression><![CDATA[$F{amount_net}]]></groupExpression>
+	</group>
+	<group name="amount_payement">
+		<groupExpression><![CDATA[$F{amount_payement}]]></groupExpression>
+	</group>
+	<group name="first_name">
+		<groupExpression><![CDATA[$F{first_name}]]></groupExpression>
+	</group>
+	<group name="last_name">
+		<groupExpression><![CDATA[$F{last_name}]]></groupExpression>
+	</group>
+	<group name="phone">
+		<groupExpression><![CDATA[$F{phone}]]></groupExpression>
+	</group>
+	<group name="numcli">
+		<groupExpression><![CDATA[$F{numcli}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="133" splitType="Stretch">
+			<rectangle>
+				<reportElement x="-20" y="0" width="842" height="40" backcolor="#000E2F" uuid="6e4ed782-056e-45a1-b2d1-4d43bfcaba54"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="30" y="3" width="740" height="30" forecolor="#FFFFFF" uuid="b893a535-3d49-420b-a7ac-0458c1c16e5c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Cantarell Extra Bold" size="18"/>
+				</textElement>
+				<text><![CDATA[GESTION DES CRÉDITS]]></text>
+			</staticText>
+			<componentElement>
+				<reportElement x="1" y="43" width="799" height="90" uuid="6b86e318-d59b-437e-8095-4e622b080dcd">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="listecredit" uuid="76aad68e-6d3a-4485-8898-700a8bd6e12f">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="90" uuid="bd199ff1-c65e-438f-9e4a-8f0b7396dae2">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Colonne1"/>
+						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="8046e42b-8568-49b0-8dae-b2cf6d02bbe4"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Serif" size="11"/>
+								</textElement>
+								<text><![CDATA[Date]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="30" uuid="c5ced937-600e-41dc-a5cb-42acf1589208"/>
+								<textFieldExpression><![CDATA[$F{date_expire_credit}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="416e776f-5c78-4fef-bbc9-c3fc67bab6e5">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Colonne2"/>
+						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="1ffca137-8d48-491e-bef8-8ea7b57ee3ab"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Serif" size="11"/>
+								</textElement>
+								<text><![CDATA[N° Crédit]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="30" uuid="13def2e1-5697-4bf9-912a-ede4ef0b2a94"/>
+								<textFieldExpression><![CDATA[$F{numero_credit}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="100" uuid="16939f4a-04f4-4a24-ae8a-bbd5906d971b">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Colonne3"/>
+						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="100" height="30" uuid="8629c27b-d2cd-40b0-b134-9778610178e3"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Serif" size="11"/>
+								</textElement>
+								<text><![CDATA[Nom]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="100" height="30" uuid="4ba1c598-0b97-452f-9a2b-d45c1bb2158b"/>
+								<textFieldExpression><![CDATA[$F{first_name}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="110" uuid="f969f3f5-ab5e-46e5-89f5-d2b6339c6a8d">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Colonne4"/>
+						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="110" height="30" uuid="ff02f2c4-3df9-4b0f-b260-dcd064622f0e"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Serif" size="11"/>
+								</textElement>
+								<text><![CDATA[Prénom]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="110" height="30" uuid="065ebf05-8b5a-4ac2-8535-44a6f7b7267a"/>
+								<textFieldExpression><![CDATA[$F{last_name}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="60" uuid="4e7f4d33-fc31-4f10-a97d-a62a2875f3c5">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Colonne5"/>
+						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="60" height="30" uuid="8baabfff-1452-4110-be20-3976b5ead5dc"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Serif" size="11"/>
+								</textElement>
+								<text><![CDATA[Cni]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="60" height="30" uuid="f2c6e533-70d6-4f5c-b2c9-61332833e660"/>
+								<textFieldExpression><![CDATA[$F{numcli}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="80" uuid="1b948331-dbbc-45a3-8f92-04983b582ef0">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Colonne6"/>
+						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="80" height="30" uuid="d3213ad4-0155-453b-ba95-c16b676884f1"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Serif" size="11"/>
+								</textElement>
+								<text><![CDATA[Téléphone]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="80" height="30" uuid="0af62acc-7bc0-42ea-8056-31b6c6ce5dc9"/>
+								<textFieldExpression><![CDATA[$F{phone}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="68" uuid="b8d97574-1ee5-4a8c-abe8-b8d35f7b8435">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Colonne7"/>
+						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="68" height="30" uuid="8b14b52b-e6f5-4883-b62c-33eae36549e2"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Serif" size="11"/>
+								</textElement>
+								<text><![CDATA[Status]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="68" height="30" uuid="9a6b5573-768b-44bb-9043-8f389afc6b64"/>
+								<textElement textAlignment="Center"/>
+								<textFieldExpression><![CDATA[$F{status_credit}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="100" uuid="5adbb0bd-af06-40e5-8491-dd683ba6c198">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Colonne8"/>
+						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="100" height="30" uuid="8a7ab0d8-54c9-4ab3-b768-4c489f118c64"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Serif" size="11"/>
+								</textElement>
+								<text><![CDATA[Date de rembrousement]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="100" height="30" uuid="a82b5104-c3db-4c34-8dac-950ca2aa7452"/>
+								<textFieldExpression><![CDATA[$F{date_expire_credit}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="78" uuid="475c09b2-6896-4c6b-a10b-9039ec0b3e99">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Colonne9"/>
+						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="78" height="30" uuid="edeed696-ade5-41fb-b72e-1886dc504ac2"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Serif" size="11"/>
+								</textElement>
+								<text><![CDATA[Montant du Prêt]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="78" height="30" uuid="d2fdcfa2-a84f-42af-918f-618bfc05eee8"/>
+								<textElement textAlignment="Right"/>
+								<textFieldExpression><![CDATA[$F{amount_net}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="94" uuid="0d344734-0f09-423a-aafe-7fbf7f395b4e">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Colonne10"/>
+						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="94" height="30" uuid="22864921-c79b-4176-8c35-07f250b3a46f"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Serif" size="11"/>
+								</textElement>
+								<text><![CDATA[Montant à rembourser]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="94" height="30" uuid="581165a9-b2af-464e-8559-9b76807ff8cc"/>
+								<textElement textAlignment="Right"/>
+								<textFieldExpression><![CDATA[$F{amount_payement}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="226" splitType="Stretch"/>
+	</detail>
+</jasperReport>

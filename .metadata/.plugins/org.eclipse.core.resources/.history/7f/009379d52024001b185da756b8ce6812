@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.13.0.final using JasperReports Library version 6.13.0-46ada4d1be8f3c5985fd0b6146f3ed44caed6f05  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="listecredit" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="36990662-611d-4152-9896-d5df7074ffb8">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="Field_1" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="87" splitType="Stretch">
+			<rectangle>
+				<reportElement x="10" y="39" width="800" height="39" backcolor="#000E2F" uuid="c418184e-4c26-4701-bbfa-61d54e0d54ed"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="90" y="43" width="590" height="30" forecolor="#FFFFFF" backcolor="#FFFFFF" uuid="0e9cc4cd-90b7-4ed6-a8d9-e1f88bb65e93"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[GESTION DES REMBOURSSEMENTS]]></text>
+			</staticText>
+			<image>
+				<reportElement x="10" y="1" width="250" height="39" uuid="283dd5e2-ddf1-42ae-92fc-2eef8d8aafa0"/>
+				<imageExpression><![CDATA["/image/thumbnail_image.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<summary>
+		<band height="107" splitType="Stretch"/>
+	</summary>
+</jasperReport>
